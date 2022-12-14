@@ -1,7 +1,7 @@
 <%- include('../header') -%>
 <h2 class="title">Create Course</h2>
 
-<form class="form-control" action="../list/course.html">
+<form class="form-control" method="post" action="/course/create">
     <label for="title">Title:</label>
     <input name="title" id="title" placeholder="What's the name of the course?" required="required"><br>
 
@@ -9,7 +9,7 @@
     <input name="description" id="description" placeholder="Tell more about the course ... " required="required"><br>
 
     <label for="launch_date">Launch Date:</label>
-    <input name="launch_date" id="launch_date" placeholder="When's the course is launched" required="required"><br>
+    <input name="launch_date" type="date" id="launch_date" placeholder="When's the course is launched" required="required"><br>
 
     <button type="submit">Submit</button>
 </form>

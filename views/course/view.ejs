@@ -1,22 +1,23 @@
 <%- include('../header') -%>
+<% const {id, title, description, launch_date} = course; %>
 <h2 class="title">View Course</h2>
 
 <table>
     <tr>
         <th>Id</th>
-        <td>1</td>
+        <td><%=id%></td>
     </tr>
     <tr>
         <th>Title</th>
-        <td>Introduction to Algorithms</td>
+        <td><%=title%></td>
     </tr>
     <tr>
         <th>Description</th>
-        <td>Learn about data structures, search algorithms, recursion</td>
+        <td><%=description%></td>
     </tr>
     <tr>
         <th>Launch Date</th>
-        <td>Aug 30, 2022</td>
+        <td><%=launch_date.toDateString()%></td>
     </tr>
 </table>
 <%- include('../footer') -%>

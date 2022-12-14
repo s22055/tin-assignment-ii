@@ -1,3 +1,5 @@
+require('./sequelize/init');
+
 var createError = require('http-errors');
 var express = require('express');
 var path = require('path');
@@ -27,7 +29,7 @@ app.use('/module', moduleRouter);
 app.use('/lesson', lessonRouter);
 
 // catch 404 and forward to error handler
-app.use(function(req, res, next) {
+app.use(function (req, res, next) {
   next(createError(404));
 });
 

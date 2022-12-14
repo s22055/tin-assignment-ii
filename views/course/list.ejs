@@ -9,45 +9,18 @@
     <th>Launch Date</th>
     <th>Actions</th>
   </tr>
+
+  <% for (const {id, title, launch_date} of courses) {%>
   <tr>
-    <td>1</td>
-    <td>Introduction to Algorithms</td>
-    <td>Aug 30, 2022</td>
+    <td><%=id%></td>
+    <td><%=title%></td>
+    <td><%=launch_date.toDateString()%></td>
     <td>
-      <a href="/course/view/" class="view button">View</a>
-      <a href="/course/edit/" class="edit button">Edit</a>
-      <a href="/course/delete/" class="delete button">Delete</a>
+      <a href="/course/view/<%=id%>" class="view button">View</a>
+      <a href="/course/edit/<%=id%>" class="edit button">Edit</a>
+      <a href="/course/delete/<%=id%>" class="delete button">Delete</a>
     </td>
   </tr>
-  <tr>
-    <td>2</td>
-    <td>Basics of Python Prorgamming</td>
-    <td>Apr 12, 2021</td>
-    <td>
-      <a href="/course/view/" class="view button">View</a>
-      <a href="/course/edit/" class="edit button">Edit</a>
-      <a href="/course/delete/" class="delete button">Delete</a>
-    </td>
-  </tr>
-  <tr>
-    <td>3</td>
-    <td>The Go Programming Language</td>
-    <td>Jun 03, 2021</td>
-    <td>
-      <a href="/course/view/" class="view button">View</a>
-      <a href="/course/edit/" class="edit button">Edit</a>
-      <a href="/course/delete/" class="delete button">Delete</a>
-    </td>
-  </tr>
-  <tr>
-    <td>4</td>
-    <td>Moderd DevOps with AWS</td>
-    <td>Oct 19, 2021</td>
-    <td>
-      <a href="/course/view/" class="view button">View</a>
-      <a href="/course/edit/" class="edit button">Edit</a>
-      <a href="/course/delete/" class="delete button">Delete</a>
-    </td>
-  </tr>
+  <% } %>
 </table>
 <%- include('../footer') -%>

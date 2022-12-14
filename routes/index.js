@@ -1,8 +1,8 @@
 var express = require('express');
 var router = express.Router();
 
-router.get('/', function(req, res, next) {
-  res.redirect('/course')
+router.get('/', function (req, res, next) {
+  res.redirect('/coursse');
 });
 
 module.exports = router;
