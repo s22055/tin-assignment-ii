@@ -1,0 +1,115 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+* {
+  font-family: arial, sans-serif;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td,
+th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+.create-button {
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 5px;
+  font-size: 17px;
+  padding: 8px 16px;
+  vertical-align: middle;
+  background-color: blanchedalmond;
+  float: right;
+  margin: 14px 0;
+}
+
+.title {
+  display: inline-block;
+}
+
+.edit-link {
+  text-decoration: none;
+}
+
+.form-control input,
+select,
+button {
+  width: 500px;
+  display: block;
+  height: 40px;
+  padding: 6px 12px;
+  font-size: 14px;
+  line-height: 1.42857143;
+  color: #555;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.form-control button {
+  width: 100px;
+  font-size: 18px;
+}
+
+input:invalid {
+  border: 1px solid red;
+}
+
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+nav li {
+  float: left;
+}
+
+nav li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+nav li a:hover:not(.active) {
+  background-color: #111;
+}
+
+.container {
+  margin: 25px;
+}
+
+footer {
+  text-align: center;
+}
+
+.button {
+  padding: 2px 8px;
+  border-radius: 8px;
+  text-transform: lowercase;
+  text-decoration: none;
+}
+
+.view {
+  background-color: rgb(157, 251, 17);
+}
+
+.edit {
+  background-color: rgb(244, 244, 116);
+}
+
+.delete {
+  background-color: #faa4a4;
+}

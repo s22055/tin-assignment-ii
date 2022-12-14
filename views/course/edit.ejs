@@ -1,0 +1,17 @@
+<%- include('../header') -%>
+<h2 class="title">Edit Course</h2>
+
+<form class="form-control" action="../list/course.html">
+    <label for="title">Title:</label>
+    <input id="title" name="title" value="Introduction to Algorithms"><br>
+
+    <label for="description">Description:</label>
+    <input id="description" name="description" value="Learn about data structures, search algorithms, recursion"
+        required="required"><br>
+
+    <label for="launch_date">Launch Date:</label>
+    <input id="launch_date" name="launch_date" value="Aug 30, 2022" required="required"><br>
+
+    <button type="submit">Submit</button>
+</form>
+<%- include('../footer') -%>

@@ -1,0 +1,38 @@
+<%- include('../header') -%>
+<h2 class="title">Create Lesson</h2>
+
+<form class="form-control" action="../list/lesson.html">
+    <label for="title">Title:</label>
+    <input id="title" name="title" placeholder="What's the name module?" required="required"><br>
+
+    <label for="description">Description:</label>
+    <input id="description" name="description" placeholder="What's the name module?" required="required"><br>
+
+    <label for="module">Module:</label>
+    <select id="module" name="module" required="required">
+        <option value="">--</option>
+        <option value="1">Numbers</option>
+        <option value="2">Complexity</option>
+        <option value="3">Array and String</option>
+        <option value="4">Linked List</option>
+        <option value="5">Hash Table</option>
+        <option value="6">Queue and Stack</option>
+        <option value="7">Recursion</option>
+        <option value="8">Binary Search</option>
+        <option value="9">Binary Tree</option>
+    </select>
+    <br>
+
+    <label for="next_lesson">Next Lesson:</label>
+    <select id="next_lesson" name="next_lesson" required="required">
+        <option value="">--</option>
+        <option value="1">Digits</option>
+        <option value="2">Reverse Number</option>
+        <option value="3">Binary Numbers</option>
+        <option value="4">Bitwise Operators</option>
+    </select>
+    <br>
+
+    <button type="submit">Submit</button>
+</form>
+<%- include('../footer') -%>
