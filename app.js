@@ -1,4 +1,4 @@
-require('./sequelize/init');
+require('./models/init');
 
 var createError = require('http-errors');
 var express = require('express');

@@ -2,92 +2,23 @@
 <h2 class="title">List of Modules</h2>
 <a class="create-button" href="/module/create/">Create Module</a>
 
-<table style="width: 400px;">
+<table style="width: 400px">
   <tr>
     <th>Id</th>
     <th>Title</th>
     <th>Actions</th>
   </tr>
+
+  <% for (const {id, title} of modules) {%>
   <tr>
-    <td>1</td>
-    <td>Numbers</td>
+    <td><%=id%></td>
+    <td><%=title%></td>
     <td>
-      <a href="/module/view/" class="view button">View</a>
-      <a href="/module/edit/" class="edit button">Edit</a>
-      <a href="/module/delete/" class="delete button">Delete</a>
+      <a href="/module/view/<%=id%>" class="view button">View</a>
+      <a href="/module/edit/<%=id%>" class="edit button">Edit</a>
+      <a href="/module/delete/<%=id%>" class="delete button">Delete</a>
     </td>
   </tr>
-  <tr>
-    <td>2</td>
-    <td>Complexity</td>
-    <td>
-      <a href="/module/view/" class="view button">View</a>
-      <a href="/module/edit/" class="edit button">Edit</a>
-      <a href="/module/delete/" class="delete button">Delete</a>
-    </td>
-  </tr>
-  <tr>
-    <td>3</td>
-    <td>Array and String</td>
-    <td>
-      <a href="/module/view/" class="view button">View</a>
-      <a href="/module/edit/" class="edit button">Edit</a>
-      <a href="/module/delete/" class="delete button">Delete</a>
-    </td>
-  </tr>
-  <tr>
-    <td>4</td>
-    <td>Linked List</td>
-    <td>
-      <a href="/module/view/" class="view button">View</a>
-      <a href="/module/edit/" class="edit button">Edit</a>
-      <a href="/module/delete/" class="delete button">Delete</a>
-    </td>
-  </tr>
-  <tr>
-    <td>5</td>
-    <td>Hash Table</td>
-    <td>
-      <a href="/module/view/" class="view button">View</a>
-      <a href="/module/edit/" class="edit button">Edit</a>
-      <a href="/module/delete/" class="delete button">Delete</a>
-    </td>
-  </tr>
-  <tr>
-    <td>6</td>
-    <td>Queue and Stack</td>
-    <td>
-      <a href="/module/view/" class="view button">View</a>
-      <a href="/module/edit/" class="edit button">Edit</a>
-      <a href="/module/delete/" class="delete button">Delete</a>
-    </td>
-  </tr>
-  <tr>
-    <td>4</td>
-    <td>Recursion</td>
-    <td>
-      <a href="/module/view/" class="view button">View</a>
-      <a href="/module/edit/" class="edit button">Edit</a>
-      <a href="/module/delete/" class="delete button">Delete</a>
-    </td>
-  </tr>
-  <tr>
-    <td>4</td>
-    <td>Binary Search</td>
-    <td>
-      <a href="/module/view/" class="view button">View</a>
-      <a href="/module/edit/" class="edit button">Edit</a>
-      <a href="/module/delete/" class="delete button">Delete</a>
-    </td>
-  </tr>
-  <tr>
-    <td>4</td>
-    <td>Binary Tree</td>
-    <td>
-      <a href="/module/view/" class="view button">View</a>
-      <a href="/module/edit/" class="edit button">Edit</a>
-      <a href="/module/delete/" class="delete button">Delete</a>
-    </td>
-  </tr>
+  <% } %>
 </table>
 <%- include('../footer') -%>

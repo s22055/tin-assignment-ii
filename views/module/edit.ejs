@@ -1,20 +1,31 @@
 <%- include('../header') -%>
 <h2 class="title">Edit Module</h2>
 
-<form class="form-control" action="../list/module.html">
-    <label for="title">Title:</label>
-    <input id="title" name="title" value="Introduction to Algorithms" required="required"><br>
+<form class="form-control" method="post">
+  <label for="title">Title:</label>
+  <input
+    id="title"
+    name="title"
+    value="<%=module.title%>"
+    required="required"
+  /><br />
 
-    <label for="course">Course:</label>
-    <select id="course" name="course" required="required">
-        <option value="">--</option>
-        <option value="1">Introduction to Algorithms</option>
-        <option value="2">Basics of Python Prorgamming</option>
-        <option value="3">The Go Programming Language</option>
-        <option value="4">Moderd DevOps with AWS</option>
-    </select>
-    <br>
+  <label for="course">Course:</label>
+  <select id="course" name="course" required="required">
+    <option value="">--</option>
+    <% for (const {id, title} of courses) {%>
+    <option 
+        value="<%=id%>" 
+        <% if(module.course_id == id) {%>
+            selected
+        <% } %>
+    >
+        <%=title%>
+    </option>
+    <% } %>
+  </select>
+  <br />
 
-    <button type="submit">Submit</button>
+  <button type="submit">Submit</button>
 </form>
 <%- include('../footer') -%>
