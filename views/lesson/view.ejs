@@ -1,27 +1,28 @@
-<%- include('../header') -%>
+<%- include('../header') -%> <% const {id, title, description, module_id,
+next_lesson_id} = lesson; %>
 <h2 class="title">View Lesson</h2>
 
 <table>
-    <tr>
-        <th>Id</th>
-        <td>1</td>
-    </tr>
-    <tr>
-        <th>Title</th>
-        <td>Digits</td>
-    </tr>
-    <tr>
-        <th>Description</th>
-        <td>Digits in base 10 can be obtained by using modulo...</td>
-    </tr>
-    <tr>
-        <th>Module</th>
-        <td>Numbers</td>
-    </tr>
+  <tr>
+    <th>Id</th>
+    <td><%=id%></td>
+  </tr>
+  <tr>
+    <th>Title</th>
+    <td><%=title%></td>
+  </tr>
+  <tr>
+    <th>Description</th>
+    <td><%=description%></td>
+  </tr>
+  <tr>
+    <th>Module</th>
+    <td><%=module_id%></td>
+  </tr>
 
-    <tr>
-        <th>Next Lesson</th>
-        <td>Reverse Number</td>
-    </tr>
+  <tr>
+    <th>Next Lesson</th>
+    <td><%=next_lesson_id%></td>
+  </tr>
 </table>
 <%- include('../footer') -%>

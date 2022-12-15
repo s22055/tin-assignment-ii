@@ -1,20 +1,14 @@
 var express = require('express');
+var lessonConrollers = require('../controllers/lesson');
 var router = express.Router();
 
-router.get('/', function(req, res, next) {
-  res.render('lesson/list');
-});
-router.get('/create', function(req, res, next) {
-  res.render('lesson/create');
-});
-router.get('/delete', function(req, res, next) {
-  res.render('lesson/delete');
-});
-router.get('/edit', function(req, res, next) {
-  res.render('lesson/edit');
-});
-router.get('/view', function(req, res, next) {
-  res.render('lesson/view');
-});
+router.get('/', lessonConrollers.renderListPage);
+router.get('/create', lessonConrollers.renderCreatePage);
+router.post('/create', lessonConrollers.performCreate);
+router.get('/delete/:id', lessonConrollers.renderDeletePage);
+router.post('/delete/:id', lessonConrollers.performDelete);
+router.get('/edit/:id', lessonConrollers.renderEditPage);
+router.post('/edit/:id', lessonConrollers.performEdit);
+router.get('/view/:id', lessonConrollers.renderViewPage);
 
 module.exports = router;

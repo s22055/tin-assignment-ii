@@ -9,45 +9,18 @@
     <th>Next Lesson</th>
     <th>Actions</th>
   </tr>
+
+  <% for (const {id, title, next_lesson_id} of lessons) {%>
   <tr>
-    <td>1</td>
-    <td>Digits</td>
-    <td>Reverse Number</td>
+    <td><%=id%></td>
+    <td><%=title%></td>
+    <td><%=next_lesson_id%></td>
     <td>
-      <a href="/lesson/view/" class="view button">View</a>
-      <a href="/lesson/edit/" class="edit button">Edit</a>
-      <a href="/lesson/delete/" class="delete button">Delete</a>
+      <a href="/lesson/view/<%=id%>" class="view button">View</a>
+      <a href="/lesson/edit/<%=id%>" class="edit button">Edit</a>
+      <a href="/lesson/delete/<%=id%>" class="delete button">Delete</a>
     </td>
   </tr>
-  <tr>
-    <td>2</td>
-    <td>Reverse Number</td>
-    <td>Binary Numbers</td>
-    <td>
-      <a href="/lesson/view/" class="view button">View</a>
-      <a href="/lesson/edit/" class="edit button">Edit</a>
-      <a href="/lesson/delete/" class="delete button">Delete</a>
-    </td>
-  </tr>
-  <tr>
-    <td>3</td>
-    <td>Binary Numbers</td>
-    <td>Bitwise Operators</td>
-    <td>
-      <a href="/lesson/view/" class="view button">View</a>
-      <a href="/lesson/edit/" class="edit button">Edit</a>
-      <a href="/lesson/delete/" class="delete button">Delete</a>
-    </td>
-  </tr>
-  <tr>
-    <td>4</td>
-    <td>Bitwise Operators</td>
-    <td>--</td>
-    <td>
-      <a href="/lesson/view/" class="view button">View</a>
-      <a href="/lesson/edit/" class="edit button">Edit</a>
-      <a href="/lesson/delete/" class="delete button">Delete</a>
-    </td>
-  </tr>
+  <% } %>
 </table>
 <%- include('../footer') -%>

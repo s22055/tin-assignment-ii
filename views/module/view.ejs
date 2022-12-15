@@ -1,17 +1,17 @@
-<%- include('../header') -%>
+<%- include('../header') -%> <% const {id, title, course_id} = module; %>
 <h2 class="title">View Module</h2>
 <table>
-    <tr>
-        <th>Id</th>
-        <td>1</td>
-    </tr>
-    <tr>
-        <th>Title</th>
-        <td>Numbers</td>
-    </tr>
-    <tr>
-        <th>Course</th>
-        <td>Introduction to Algorithms</td>
-    </tr>
+  <tr>
+    <th>Id</th>
+    <td><%=id%></td>
+  </tr>
+  <tr>
+    <th>Title</th>
+    <td><%=title%></td>
+  </tr>
+  <tr>
+    <th>Course</th>
+    <td><%=course_id%></td>
+  </tr>
 </table>
 <%- include('../footer') -%>
