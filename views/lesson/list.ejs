@@ -10,11 +10,11 @@
     <th>Actions</th>
   </tr>
 
-  <% for (const {id, title, next_lesson_id} of lessons) {%>
+  <% for (const {id, title, nextLessonId} of lessons) {%>
   <tr>
     <td><%=id%></td>
     <td><%=title%></td>
-    <td><%=next_lesson_id%></td>
+    <td><%=nextLessonId%></td>
     <td>
       <a href="/lesson/view/<%=id%>" class="view button">View</a>
       <a href="/lesson/edit/<%=id%>" class="edit button">Edit</a>

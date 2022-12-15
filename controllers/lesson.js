@@ -2,7 +2,7 @@ var Module = require('../models/Module');
 var Lesson = require('../models/Lesson');
 
 async function renderListPage(req, res, next) {
-  const lessons = await Lesson.findAll();
+  const lessons = await Lesson.findAll({});
   res.render('lesson/list', { lessons });
 }
 
@@ -13,8 +13,8 @@ async function renderCreatePage(req, res, next) {
 }
 
 async function performCreate(req, res, next) {
-  const { title, description, module_id } = req.body;
-  await Lesson.create({ title, description, module_id });
+  const { title, description, moduleId } = req.body;
+  await Lesson.create({ title, description, moduleId });
   res.redirect('/lesson');
 }
 
@@ -36,16 +36,18 @@ async function renderEditPage(req, res, next) {
 }
 
 async function performEdit(req, res, next) {
-  const { title, description, module_id, next_lesson_id } = req.body;
+  const { title, description, moduleId, nextLessonId } = req.body;
   await Module.update(
-    { title, description, module_id, next_lesson_id },
+    { title, description, moduleId, nextLessonId },
     { where: { id: req.params.id } }
   );
   res.redirect('/lesson');
 }
 
 async function renderViewPage(req, res, next) {
-  const lesson = await Lesson.findOne({ where: { id: req.params.id } });
+  const lesson = await Lesson.findOne({
+    where: { id: req.params.id },
+  });
   if (lesson) res.render('lesson/view', { lesson });
   else res.status(404).end('Not found');
 }

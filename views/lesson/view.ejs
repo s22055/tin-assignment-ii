@@ -1,5 +1,5 @@
-<%- include('../header') -%> <% const {id, title, description, module_id,
-next_lesson_id} = lesson; %>
+<%- include('../header') -%> <% const {id, title, description, moduleId,
+nextLessonId} = lesson; %>
 <h2 class="title">View Lesson</h2>
 
 <table>
@@ -17,12 +17,12 @@ next_lesson_id} = lesson; %>
   </tr>
   <tr>
     <th>Module</th>
-    <td><%=module_id%></td>
+    <td><%=moduleId%></td>
   </tr>
 
   <tr>
     <th>Next Lesson</th>
-    <td><%=next_lesson_id%></td>
+    <td><%=nextLessonId%></td>
   </tr>
 </table>
 <%- include('../footer') -%>

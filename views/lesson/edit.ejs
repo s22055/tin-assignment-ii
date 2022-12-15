@@ -1,8 +1,8 @@
-<%- include('../header') -%> <% const {id, title, description, next_lesson_id,
-module_id} = lesson; %>
+<%- include('../header') -%> <% const {id, title, description, nextLessonId,
+  moduleId} = lesson; %>
 <h2 class="title">Edit Lesson</h2>
 
-<form class="form-control" action="../list/lesson.html">
+<form class="form-control" method="post">
   <label for="title">Title:</label>
   <input id="title" name="title" value="<%=title%>" /><br />
 
@@ -19,7 +19,7 @@ module_id} = lesson; %>
     <% for (const {id, title} of modules) {%>
     <option 
         value="<%=id%>"
-        <% if(id == module_id){ %> selected <% } %>
+        <% if(id == moduleId){ %> selected <% } %>
     >
         <%=title%>
     </option>
@@ -28,12 +28,12 @@ module_id} = lesson; %>
   <br />
 
   <label for="next_lesson">Next Lesson:</label>
-  <select id="next_lesson" name="next_lesson" required="required">
+  <select id="next_lesson" name="next_lesson">
     <option value="">--</option>
     <% for (const {id, title} of lessons) {%>
     <option 
         value="<%=id%>"
-        <% if(id == next_lesson_id){ %> selected <% } %>
+        <% if(id == nextLessonId){ %> selected <% } %>
         ><%=title%></option>
     <% } %>
   </select>

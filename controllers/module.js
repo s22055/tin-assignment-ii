@@ -12,8 +12,8 @@ async function renderCreatePage(req, res, next) {
 }
 
 async function performCreate(req, res, next) {
-  const { title, course_id } = req.body;
-  await Module.create({ title, course_id });
+  const { title, courseId } = req.body;
+  await Module.create({ title, courseId });
   res.redirect('/module');
 }
 
@@ -28,19 +28,25 @@ async function performDelete(req, res, next) {
 
 async function renderEditPage(req, res, next) {
   const courses = await Course.findAll();
-  const module_ = await Module.findOne({ where: { id: req.params.id } });
+  const module_ = await Module.findOne({
+    where: { id: req.params.id },
+    include: Course,
+  });
   if (module_) res.render('module/edit', { module: module_, courses });
   else res.status(404).end('Not found');
 }
 
 async function performEdit(req, res, next) {
-  const { title, course_id } = req.body;
-  await Module.update({ title, course_id }, { where: { id: req.params.id } });
+  const { title, courseId } = req.body;
+  await Module.update({ title, courseId }, { where: { id: req.params.id } });
   res.redirect('/module');
 }
 
 async function renderViewPage(req, res, next) {
-  const module_ = await Module.findOne({ where: { id: req.params.id } });
+  const module_ = await Module.findOne({
+    include: { model: Course },
+    where: { id: req.params.id },
+  });
   if (module_) res.render('module/view', { module: module_ });
   else res.status(404).end('Not found');
 }

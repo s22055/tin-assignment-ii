@@ -1,4 +1,4 @@
-<%- include('../header') -%> <% const {id, title, course_id} = module; %>
+<%- include('../header') -%> <% const {id, title, course} = module; %>
 <h2 class="title">View Module</h2>
 <table>
   <tr>
@@ -11,7 +11,7 @@
   </tr>
   <tr>
     <th>Course</th>
-    <td><%=course_id%></td>
+    <td><%=course.title%></td>
   </tr>
 </table>
 <%- include('../footer') -%>

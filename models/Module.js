@@ -14,15 +14,16 @@ const Module = connection.define('module', {
     max: 63,
     allowNull: false,
   },
-  course_id: {
+  courseId: {
     type: DataTypes.INTEGER,
     references: {
-        model: Course,
-        key: 'id',
-    }
-  }
+      model: Course,
+      key: 'id',
+    },
+  },
 });
 
-Course.hasMany(Module, { foreignKey: 'course_id' });
+Course.hasMany(Module, { foreignKey: 'courseId' });
+Module.belongsTo(Course);
 
 module.exports = Module;

@@ -20,7 +20,7 @@ const Lesson = connection.define('lesson', {
     max: 255,
     allowNull: false,
   },
-  module_id: {
+  moduleId: {
     type: DataTypes.INTEGER,
     references: {
       model: Module,
@@ -29,6 +29,5 @@ const Lesson = connection.define('lesson', {
   },
 });
 
-Lesson.hasOne(Lesson, { as: 'parent', foreignKey: 'next_lesson_id' });
-
+Lesson.hasOne(Lesson, { as: 'parent', foreignKey: 'nextLessonId' });
 module.exports = Lesson;
